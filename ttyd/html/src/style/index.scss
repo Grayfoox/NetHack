@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+#terminal-container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  .terminal {
+    flex: 1 1 auto;
+    padding: 5px;
+    overflow: auto;
+  }
+
+ .simple-keyboard {
+    /* keyboard sits below terminal, fixed height */
+    flex: 0 0 265px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+ }
+}
+
+.hg-theme-default .hg-button {
+  height: 48px;
+}
+
+footer {
+  flex: 0 0 1em;
+  line-height: 1em;  /* center text vertically */
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #eee;
+  background: #989797;
+}
+

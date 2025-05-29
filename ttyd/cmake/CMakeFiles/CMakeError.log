@@ -1,0 +1,32 @@
+Determining if the LWS_WITH_MBEDTLS exist failed with the following output:
+Change Dir: /opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_71360/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_71360.dir/build.make CMakeFiles/cmTC_71360.dir/build
+gmake[1]: Entering directory '/opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn'
+Building C object CMakeFiles/cmTC_71360.dir/CheckSymbolExists.c.o
+/usr/bin/cc  -I/usr/include/json-c -D_GNU_SOURCE  -std=gnu99 -o CMakeFiles/cmTC_71360.dir/CheckSymbolExists.c.o -c /opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn/CheckSymbolExists.c
+/opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn/CheckSymbolExists.c: In function ‘main’:
+/opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn/CheckSymbolExists.c:8:19: error: ‘LWS_WITH_MBEDTLS’ undeclared (first use in this function); did you mean ‘LWS_WITH_TLS’?
+    8 |   return ((int*)(&LWS_WITH_MBEDTLS))[argc];
+      |                   ^~~~~~~~~~~~~~~~
+      |                   LWS_WITH_TLS
+/opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_71360.dir/build.make:78: CMakeFiles/cmTC_71360.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/opt/ttyd/ttyd/cmake/CMakeFiles/CMakeScratch/TryCompile-mRI5gn'
+gmake: *** [Makefile:127: cmTC_71360/fast] Error 2
+
+
+File CheckSymbolExists.c:
+/* */
+#include <lws_config.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef LWS_WITH_MBEDTLS
+  return ((int*)(&LWS_WITH_MBEDTLS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

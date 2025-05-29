@@ -1,0 +1,2 @@
+/usr/local/bin/ttyd
+/usr/local/share/man/man1/ttyd.1
